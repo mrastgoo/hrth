@@ -1,0 +1,59 @@
+%%% Features extraction
+
+	\tikzstyle{abstract1}=[rectangle, draw=black, rounded corners, fill=azulunam, text= white,text centered, anchor=north, text width=10cm, minimum height = 1em]
+    \tikzstyle{abstract2}=[rectangle, draw=black, rounded corners, fill=azulunam!40, text= black, text centered, anchor=north, text width=10cm, text height = 0.5em]
+    \tikzstyle{comment}=[rectangle, draw=black, rounded corners,  fill=azulunam!20,
+        text centered, anchor=north, text=black, text width=10cm]
+    \tikzstyle{abstract3}=[rectangle, draw=black, rounded corners, fill=gray!40, text= gray!20, text centered, anchor=north, text width=10cm, text height = 0.5em]
+%    \tikzstyle{comment2}=[rectangle, draw=black, rounded corners,  fill=gray!40,text= gray!20, text centered, anchor=north, text width=9cm]
+    \tikzstyle{myarrow}=[->, >=open triangle 90, thick]
+    \tikzstyle{line}=[-, thick]
+
+ 	\begin{center}
+
+	\begin{tikzpicture}[node distance = 0.7cm,scale=0.7, every node/.style={scale=0.7}]
+			    
+	    \node (ft) [abstract1]{ Features};
+	    \node (Cf) [abstract1, below=1cm of ft]{Color Feature}; 
+	    \node (Tf) [abstract1, left=of Cf]{Texture Features};
+	    \node (Sf) [abstract1, right=of Cf]{Shape Features };
+   
+		\node(TfTag1) [abstract2, below = 0.5cm of Tf]{$T_{1}$}; 	   
+	    \node (Tfd1) [comment,  below= 0.2 cm of TfTag1]{\textbf{CLBP}};
+	    
+	    \node(TfTag2) [abstract2, below = 0.5cm of Tfd1]{$T_{2}$}; 	 
+	    \node (Tfd2) [comment,  below = 0.2cm of TfTag2]{GLCMaO};
+	    
+	    \node(TfTag3) [abstract2, below = 0.5cm of Tfd2]{$T_{3}$}; 	 
+	    \node (Tfd3) [comment,  below = 0.2cm of TfTag3]{\textbf{Gabor Filter}};
+	    
+	    \node(TfTag4) [abstract2, below = 0.5cm of Tfd3]{$T_{4}$}; 	 
+	    \node (Tfd4) [comment,  below = 0.2cm of TfTag4]{\textbf{Histogram of oriented gradients}};
+%	    \node (Tfd5) [abstract3, below = 0.2cm of Tfd4]{SIFT};
+
+	    \node (Cf1)	 [abstract2, below = 0.5cm of Cf]{$C_{1}$};
+		\node (Cfd1) [comment,  below = 0.2cm of Cf1]{RGB histogram};
+	 	\node (Cfd2) [comment,  below = 0.2cm of Cfd1]{Mean \& variance \newline (RGB, HSV, Luv)};
+	 	
+	 	\node (Cf2)  [abstract2, below = 0.5cm of Cfd2 ]{$C_{2}$};
+	 	\node (Cfd3) [comment,  below = 0.2cm of Cf2]{\textbf{Opponent angle}};
+	 	\node (cfd4) [comment,  below = 0.2cm of Cfd3]{\textbf{Hue histogram}};
+	 	
+%	 	\node (Cf3) [abstract3, below = 0.2cm of cfd4] {$C_{3}$};
+%	 	\node (Cfd5) [comment2, below = 0cm of Cf3]{RGB pixel intensities}; 
+	 	
+	 	\node (SfTag) [abstract2, below = 0.5cm of Sf]{$S$}; 
+	 	\node (Sfd1) [comment, below = 0.2cm of SfTag]{Asymmetry index};
+	 	\node (Sfd2) [comment, below = 0.2cm of Sfd1]{Thinness ratio};
+	 	\node (Sfd3) [comment, below = 0.2cm of Sfd2]{Gradient operator \newline
+	 											     along border line};
+        \node (Sfd4) [comment, below = 0.2cm of Sfd3]{Area and primeter};
+	 			     
+	 											     
+	    \draw[line] (ft.south)   -| (Cf.north);
+	    \draw[line] (Tf.north) -- ++(0, 0.5) -| (Sf.north);
+
+
+	       
+	\end{tikzpicture}
+	\end{center}
