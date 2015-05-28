@@ -1,0 +1,9 @@
+# Latex file #
+##############
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
