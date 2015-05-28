@@ -1,3 +1,4 @@
+$ cat .gitignore
 # Latex file #
 ##############
 *.aux
@@ -7,3 +8,4 @@
 *.snm
 *.synctex.gz
 *.toc
+*.~
